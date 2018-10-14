@@ -20,13 +20,23 @@
       padding:20px;
     }
   </style>
+<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+
 </head>
 <body>
   <div>
-    <h1>这是标题1</h1>
+    <h1 id="app">{{message}}</h1>
     <h2>这是标题2</h2>
     <p>这是个段落</p>
     <p id="two">这个段落设置了内边距</p>
   </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+    </script>
 </body>
 </html>
