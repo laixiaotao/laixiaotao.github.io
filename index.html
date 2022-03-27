@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>测试模式</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life, Power, Save</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.0/dayjs.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 14px;
+      }
+      h1 {
+        margin: 0.1rem;
+        margin: 0;
+        padding: 0;
+        font-size: 5rem;
+        text-align: center;
+      }
+      .title {
+        font-size: 2.7rem;
+      }
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+      }
+      .foot-container {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 4rem;
+      }
+      body {
+        position: relative;
+        height: 100vh;
+      }
+      .foot-container .date {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="time"></h1>
+      <h1 class="love">💖</h1>
+      <h1 class="title">Life, Power, Save</h1>
+    </div>
+    <div class="foot-container">
+      <h1 class="date"></h1>
+    </div>
+    <script>
+      const timeEle = document.querySelector(".main-container h1.time");
+      const dateEle = document.querySelector(".foot-container .date");
+      setInterval(() => {
+        timeEle.innerHTML = dayjs().format("HH:mm:ss");
+        dateEle.innerHTML = dayjs().format("YYYY年MM月DD日");
+      }, 1000);
+    </script>
+  </body>
 </html>
